@@ -1,6 +1,6 @@
 package com.learning.tmdbclient.domain.repository
 
-import data.model.artist.Artist
+import com.learning.tmdbclient.data.model.artist.Artist
 
 interface ArtistRepository {
 

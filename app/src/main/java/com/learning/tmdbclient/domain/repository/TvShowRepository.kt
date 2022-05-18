@@ -1,6 +1,6 @@
 package com.learning.tmdbclient.domain.repository
 
-import data.model.tvshow.TvShow
+import com.learning.tmdbclient.data.model.tvshow.TvShow
 
 interface TvShowRepository {
 

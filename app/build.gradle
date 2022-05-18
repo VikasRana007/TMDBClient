@@ -19,6 +19,8 @@ android {
         buildConfigField "String","API_KEY","\"bb37c2b9c9b80aed2ce0be97ce366ad2\""
     }
 
+
+
     buildTypes {
         release {
             minifyEnabled false
@@ -33,7 +35,7 @@ android {
         jvmTarget = '1.8'
     }
     buildFeatures {
-        dataBinding true
+        dataBinding = true
     }
 }
 
