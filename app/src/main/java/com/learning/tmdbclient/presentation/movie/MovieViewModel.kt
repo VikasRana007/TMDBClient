@@ -17,7 +17,8 @@ class MovieViewModel(
     }
 
     fun updateMovieList() = liveData {
-        val updateMovieList: List<Movie>? = updateMoviesUseCase.execute()   // updated movie list as live data
-        emit(updateMovieList)
+        val updateMovieList: List<Movie>? = updateMoviesUseCase.execute()
+        emit(updateMovieList)      // updated movie list as live data
+
     }
 }

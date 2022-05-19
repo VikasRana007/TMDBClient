@@ -4,6 +4,6 @@ package com.learning.tmdbclient.data.model.movie
 import com.google.gson.annotations.SerializedName
 
 data class MovieList(
-    @SerializedName("tvShows")
+    @SerializedName("results")
     val movie: List<Movie>
 )
