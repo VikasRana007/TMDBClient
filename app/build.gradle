@@ -16,10 +16,13 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField "String","API_KEY","\"bb37c2b9c9b80aed2ce0be97ce366ad2\""
+        buildConfigField "String", "API_KEY", "\"bb37c2b9c9b80aed2ce0be97ce366ad2\""
+        buildConfigField "String", "BASE_URL", "\"https://api.themoviedb.org/3/\""
     }
 
-
+//    kapt {
+//        generateStubs = true
+//    }
 
     buildTypes {
         release {
