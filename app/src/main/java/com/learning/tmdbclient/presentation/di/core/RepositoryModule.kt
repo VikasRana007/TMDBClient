@@ -14,6 +14,7 @@ import com.learning.tmdbclient.data.repository.tvshow.datasource.TvShowLocalData
 import com.learning.tmdbclient.data.repository.tvshow.datasource.TvShowRemoteDataSource
 import com.learning.tmdbclient.domain.repository.ArtistRepository
 import com.learning.tmdbclient.domain.repository.MovieRepository
+import com.learning.tmdbclient.domain.repository.TvShowRepository
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -43,7 +44,7 @@ class RepositoryModule {
         tvShowRemoteDataSource: TvShowRemoteDataSource,
         tvShowLocalDataSource: TvShowLocalDataSource,
         tvShowCacheDataSource: TvShowCacheDataSource
-    ): TvShowRepositoryImpl {
+    ): TvShowRepository {
 
         return TvShowRepositoryImpl(
             tvShowRemoteDataSource,

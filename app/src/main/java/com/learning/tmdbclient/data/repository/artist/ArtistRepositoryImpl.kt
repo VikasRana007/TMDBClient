@@ -1,6 +1,5 @@
 package com.learning.tmdbclient.data.repository.artist
 
-import android.util.Log
 import com.learning.tmdbclient.data.model.artist.Artist
 import com.learning.tmdbclient.data.model.artist.ArtistList
 import com.learning.tmdbclient.data.repository.artist.datasource.ArtistCacheDataSource
@@ -14,11 +13,11 @@ class ArtistRepositoryImpl(
     private val artistLocalDataSource: ArtistLocalDataSource,
     private val artistCacheDataSource: ArtistCacheDataSource
 ) : ArtistRepository {
-    override suspend fun getArtist(): List<Artist>? {
+    override suspend fun getArtist(): List<Artist> {
         return getArtistFromCache()
     }
 
-    override suspend fun updateArtist(): List<Artist>? {
+    override suspend fun updateArtist(): List<Artist> {
         val newListOfArtist = getArtistFromApi()
         artistLocalDataSource.clearAll()
         artistLocalDataSource.saveArtistToDB(newListOfArtist)
@@ -27,7 +26,7 @@ class ArtistRepositoryImpl(
     }
 
 
-    suspend fun getArtistFromApi(): List<Artist> {
+    private suspend fun getArtistFromApi(): List<Artist> {
         lateinit var artistList: List<Artist>
         try {
             val response: Response<ArtistList> = artistRemoteDataSource.getArtist()
@@ -36,20 +35,18 @@ class ArtistRepositoryImpl(
                 artistList = body.artists
             }
         } catch (exception: Exception) {
-            Log.i("MYTAG", exception.message.toString())
         }
         return artistList
     }
 
-    suspend fun getArtistFromDB(): List<Artist> {
+    private suspend fun getArtistFromDB(): List<Artist> {
         lateinit var artistList: List<Artist>
         try {
             artistList = artistLocalDataSource.getArtistFromDB()
 
         } catch (exception: Exception) {
-            Log.i("MYTAG", exception.message.toString())
         }
-        if (artistList.size > 0) {
+        if (artistList.isNotEmpty()) {
             return artistList
         } else {
             artistList = getArtistFromApi()
@@ -58,15 +55,14 @@ class ArtistRepositoryImpl(
         return artistList
     }
 
-    suspend fun getArtistFromCache(): List<Artist> {
+    private suspend fun getArtistFromCache(): List<Artist> {
         lateinit var artistList: List<Artist>
         try {
             artistList = artistCacheDataSource.getArtistFromCache()
 
         } catch (exception: Exception) {
-            Log.i("MYTAG", exception.message.toString())
         }
-        if (artistList.size > 0) {
+        if (artistList.isNotEmpty()) {
             return artistList
         } else {
             artistList = getArtistFromDB()

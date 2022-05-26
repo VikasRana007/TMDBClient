@@ -24,13 +24,13 @@ class UseCaseModule {
     // for tv show data
 
     @Provides
-    fun provideGetTvShowUseCase(tvShowsUseCase: TvShowRepository): GetTvShowsUseCase {
-        return GetTvShowsUseCase(tvShowsUseCase)
+    fun provideGetTvShowUseCase(tvShowRepository: TvShowRepository): GetTvShowsUseCase {
+        return GetTvShowsUseCase(tvShowRepository)
     }
 
     @Provides
-    fun provideUpdateTvShowUseCase(tvShowsUseCase: TvShowRepository): UpdateTvShowsUseCase {
-        return UpdateTvShowsUseCase(tvShowsUseCase)
+    fun provideUpdateTvShowUseCase(tvShowRepository: TvShowRepository): UpdateTvShowsUseCase {
+        return UpdateTvShowsUseCase(tvShowRepository)
     }
 
 // for artist data

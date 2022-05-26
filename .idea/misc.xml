@@ -4,11 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android_05_2022_New/TMDBClient/app/src/main/res/drawable/btn_rounded.xml" value="0.151" />
-        <entry key="..\:/Android_05_2022_New/TMDBClient/app/src/main/res/layout/activity_artist.xml" value="0.19427083333333334" />
+        <entry key="..\:/Android_05_2022_New/TMDBClient/app/src/main/res/layout/activity_artist.xml" value="0.1" />
         <entry key="..\:/Android_05_2022_New/TMDBClient/app/src/main/res/layout/activity_home.xml" value="0.19427083333333334" />
         <entry key="..\:/Android_05_2022_New/TMDBClient/app/src/main/res/layout/activity_main.xml" value="0.19427083333333334" />
         <entry key="..\:/Android_05_2022_New/TMDBClient/app/src/main/res/layout/activity_movie.xml" value="0.19427083333333334" />
         <entry key="..\:/Android_05_2022_New/TMDBClient/app/src/main/res/layout/activity_tv_show.xml" value="0.19427083333333334" />
+        <entry key="..\:/Android_05_2022_New/TMDBClient/app/src/main/res/layout/list_item.xml" value="0.19322916666666667" />
+        <entry key="..\:/Android_05_2022_New/TMDBClient/app/src/main/res/menu/update.xml" value="0.19427083333333334" />
       </map>
     </option>
   </component>
